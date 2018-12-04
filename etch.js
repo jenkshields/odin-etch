@@ -1,17 +1,17 @@
 const container = document.querySelector('#container');
 const resetButton = document.querySelector('#reset');
-container.style.width = '75%';
+container.style.width = '65%';
 createGrid(256);
 
 resetButton.addEventListener('click', (e) => {reset()});
 
 function createGrid(size) {
-    let long = (size/size);
+    let long = Math.sqrt(size);
     for (var i = 0; i < size; i++) {
         var gridDiv = document.createElement('div');
-        gridDiv.classList.add('empty');
         container.style.setProperty(`--rowNum`, long);
         container.style.setProperty(`--colNum`, long);
+        gridDiv.classList.add('empty');
         container.appendChild(gridDiv);
     }
     draw();
