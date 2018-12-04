@@ -1,0 +1,38 @@
+:root {
+    --rowNum: 16;
+    --colNum: 16;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(var(--rowNum), auto);
+    grid-template-rows: repeat(var(--colNum), auto);
+    horiz-align: center;
+}
+
+body {
+    text-align: center;
+}
+
+.empty {
+    background-color: white;
+    width: auto;
+}
+
+.empty:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.filled {
+    background-color: black;
+    width: auto;
+}
+
+.empty:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
